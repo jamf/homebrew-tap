@@ -32,6 +32,12 @@ class JamfPro < Formula
     zsh_comp_dir = "#{prefix}/share/zsh/site-functions"
     mkdir_p zsh_comp_dir
     File.new("#{zsh_comp_dir}/_jamf-pro", 'w').puts(%x(#{bin}/jamf-pro completion zsh))
+
+    # Install bash completion to brews etc/bash_completion.d dir so that we get
+    # autocompletion without messing with our bashrc or bash_profile
+    bash_comp_dir = "#{prefix}/etc/bash_completion.d"
+    mkdir_p bash_comp_dir
+    File.new("#{bash_comp_dir}/jamf-pro", 'w').puts(%x(#{bin}/jamf-pro completion bash))
   end
 
   test do
