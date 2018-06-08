@@ -1,5 +1,7 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                http://www.rubydoc.info/github/Homebrew/brew/master/Formula
+# Documentation:
+# - https://docs.brew.sh/Formula-Cookbook
+# - http://www.rubydoc.info/github/Homebrew/brew/master/Formula
+
 require 'json'
 
 class JamfPro < Formula
