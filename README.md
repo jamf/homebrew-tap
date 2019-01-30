@@ -33,3 +33,4 @@ request and add at least one of the maintainers below as reviewer.
 * Brian Stewart - brian.stewart@jamf.com
 * Grant Wuerker - grant.wuerker@jamf.com
 * David Brazeau - david.brazeau@jamf.com
+* Brandon Roehl - brandon.roehl@jamf.com
