@@ -6,7 +6,7 @@ require 'json'
 
 class JamfPro < Formula
   release = JSON.parse(File.open(File.expand_path("../../jamf-pro/release.json", __FILE__)).read)
-  snapshot = JSON.parse(File.open(File.expand_path("../../jamf-pro/snapshot.json", __FILE__)).read)
+  beta = JSON.parse(File.open(File.expand_path("../../jamf-pro/beta.json", __FILE__)).read)
 
   depends_on "mysql-client" => :recommended
 
@@ -15,11 +15,11 @@ class JamfPro < Formula
   version release["version"]
   sha256 release["sha256"]
 
-  # Used for the latest passing snapshots
+  # Used for the latest passing betas
   devel do
-    url snapshot["url"], using: :nounzip
-    version snapshot["version"]
-    sha256 snapshot["sha256"]
+    url beta["url"], using: :nounzip
+    version beta["version"]
+    sha256 beta["sha256"]
   end
 
   desc "The Jamf Pro CLI"
