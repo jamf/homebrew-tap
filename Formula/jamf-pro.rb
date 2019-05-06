@@ -8,8 +8,6 @@ class JamfPro < Formula
   release = JSON.parse(File.open(File.expand_path("../../jamf-pro/release.json", __FILE__)).read)
   beta = JSON.parse(File.open(File.expand_path("../../jamf-pro/beta.json", __FILE__)).read)
 
-  depends_on "mysql-client" => :recommended
-
   # The official release
   url release["url"], using: :nounzip
   version release["version"]
