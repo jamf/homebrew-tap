@@ -21,6 +21,15 @@ regular Homebrew package. For example:
 
 Check out the formulas in this repository to see what is available.
 
+## Beta Releases
+
+To install beta channel releases, instead of the stable ones, add a `--head`
+flag after the brew commands:
+
+```shell
+brew install jamf-pro --head
+```
+
 ## Contributing
 
 Feel free to contribute! If you created a tool that might be useful to others,
