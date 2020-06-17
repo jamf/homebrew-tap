@@ -14,7 +14,7 @@ class JamfPro < Formula
   sha256 release["sha256"]
 
   # Used for the latest passing betas
-  devel do
+  head do
     url beta["url"], using: :nounzip
     version beta["version"]
     sha256 beta["sha256"]
