@@ -27,7 +27,7 @@ To install beta channel releases, instead of the stable ones, add a `--head`
 flag after the brew commands:
 
 ```shell
-brew install jamf-pro --head
+brew install jamf-pro --HEAD
 ```
 
 ## Contributing
