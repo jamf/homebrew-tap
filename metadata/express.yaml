@@ -1,3 +1,3 @@
-version: "0.1.0-alpha.8"
-url: "https://github.com/jamf/express/releases/download/0.1.0-alpha.8/express-darwin"
-sha256: "04e87d7078a5e08ad42e0dc42aa3864bd5b0f584b435e04b8379acc7259cde7b"
+version: "0.2.0"
+url: "https://github.com/jamf/express/releases/download/0.2.0/express-darwin"
+sha256: "0d3b4f83a3ceac81ece0cbc68ff45308f5a21e3a30b4ecb1a3b259905e394a8c"
