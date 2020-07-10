@@ -1,0 +1,3 @@
+version: "v0.3.0"
+url: "https://github.com/jamf/express/releases/download/v0.3.0/express-darwin"
+sha256: "30e73c0e32d56ab59fdea69f096a289157dd0c038d43e6960000ea17341e339b"
