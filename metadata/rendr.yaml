@@ -1,3 +1,3 @@
-version: "v1.0.0-rc.1"
-url: "https://github.com/jamf/rendr/releases/download/v1.0.0-rc.1/rendr-darwin"
-sha256: "cebd19d59d3ade15d1d88571132420f040c0e873bb979f5d918d01b951bbc9b0"
+version: "v1.0.0-rc.2"
+url: "https://github.com/jamf/rendr/releases/download/v1.0.0-rc.2/rendr-darwin"
+sha256: "f698d5081b4813a273aa83369f9906b2752759e7442cc5772af10df188e61454"
