@@ -8,11 +8,11 @@ class Hermes < Formula
   version release["version"]
   if Hardware::CPU.arm?
     url "https://github.com/jamf/k8s-hermes-cli/releases/download/#{version}/hermes-darwin-arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 release["amdsha"]
+    sha256 release["armsha"]
   end
   if Hardware::CPU.intel?
     url "https://github.com/jamf/k8s-hermes-cli/releases/download/#{version}/hermes-darwin-amd64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-    sha256 release["armsha"]
+    sha256 release["amdsha"]
   end
   
   desc "Hermes CLI"
