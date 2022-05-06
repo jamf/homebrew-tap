@@ -38,12 +38,21 @@
 # strategy is suitable for corporate use just like S3DownloadStrategy, because
 # it lets you use a private GitHub repository for internal distribution.  It
 # works with public one, but in that case simply use CurlDownloadStrategy.
+class EnvironmentMissingError < StandardError
+
+end
+
+class AccessDeniedError < StandardError
+
+end
+
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     require "utils/formatter"
     require "utils/github"
   
     def initialize(url, name, version, **meta)
       super
+      ohai "initializing github downloader"
       parse_url_pattern
       set_github_token
     end
@@ -69,7 +78,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     def set_github_token
       @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
       unless @github_token
-        raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
+        raise EnvironmentMissingError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
       end
   
       validate_github_repository_access!
@@ -78,14 +87,14 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     def validate_github_repository_access!
       # Test access to the repository
       GitHub.repository(@owner, @repo)
-    rescue GitHub::API::HTTPNotFoundError
+    rescue GitHub::API::HTTPNotFoundError, GitHub::API::AuthenticationFailedError
       # We switched to GitHub::API::HTTPNotFoundError, 
       # because we can now handle bad credentials messages
       message = <<~EOS
         HOMEBREW_GITHUB_API_TOKEN can not access the repository: #{@owner}/#{@repo}
         This token may not have permission to access the repository or the url of formula may be incorrect.
       EOS
-      raise CurlDownloadStrategyError, message
+      raise AccessDeniedError, message
     end
   end
   
