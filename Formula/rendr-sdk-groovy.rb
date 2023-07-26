@@ -1,3 +1,5 @@
+require 'yaml'
+
 class RendrSdkGroovy < Formula
   desc "Groovy SDK for Rendr, a rapid application development toolset"
   homepage "https://github.com/jamf/rendr-sdk-groovy"

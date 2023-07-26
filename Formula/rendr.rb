@@ -1,3 +1,5 @@
+require 'yaml'
+
 class Rendr < Formula
   desc "A rapid application development toolset"
   homepage "https://github.com/jamf/rendr"
